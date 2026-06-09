@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hibi Chinese</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="App navigation">
+        <a class="brand" href="#today" aria-label="Hibi Chinese home">
+          <span class="brand-mark" aria-hidden="true">汉</span>
+          <span>
+            <strong>Hibi Chinese</strong>
+            <small>Daily Mandarin</small>
+          </span>
+        </a>
+
+        <nav class="nav-list" aria-label="Primary">
+          <a href="#today" class="nav-link active" data-view-link="today">
+            <span aria-hidden="true">今</span>
+            <span>Today</span>
+          </a>
+          <a href="#review" class="nav-link" data-view-link="review">
+            <span aria-hidden="true">复</span>
+            <span>Review</span>
+          </a>
+          <a href="#tones" class="nav-link" data-view-link="tones">
+            <span aria-hidden="true">声</span>
+            <span>Tones</span>
+          </a>
+          <a href="#progress" class="nav-link" data-view-link="progress">
+            <span aria-hidden="true">进</span>
+            <span>Progress</span>
+          </a>
+        </nav>
+
+        <section class="streak-panel" aria-label="Current streak">
+          <span class="metric-label">Streak</span>
+          <strong id="streakCount">0</strong>
+          <span id="streakStatus">Start today</span>
+        </section>
+      </aside>
+
+      <main>
+        <section class="hero" id="today">
+          <div class="hero-art" aria-hidden="true">
+            <div class="sun"></div>
+            <div class="mountain mountain-a"></div>
+            <div class="mountain mountain-b"></div>
+            <div class="river"></div>
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow" id="todayDate">Daily Chinese</p>
+            <h1 id="lessonTitle">Loading lesson</h1>
+            <p id="lessonGoal">A few useful Mandarin phrases, one day at a time.</p>
+          </div>
+        </section>
+
+        <section class="workspace" aria-label="Lesson workspace">
+          <div class="lesson-column">
+            <section class="lesson-card phrase-card" aria-labelledby="phraseHeading">
+              <div class="section-heading">
+                <span>1</span>
+                <h2 id="phraseHeading">Today's Phrase</h2>
+              </div>
+              <div class="hanzi-row">
+                <p id="phraseHanzi">你好</p>
+                <button class="icon-button" type="button" id="speakPhrase" aria-label="Play phrase" title="Play phrase">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4.5 2.5a6 6 0 0 1 0 9m3-12a10 10 0 0 1 0 15"/></svg>
+                </button>
+              </div>
+              <p class="pinyin" id="phrasePinyin">ni hao</p>
+              <p class="translation" id="phraseTranslation">Hello</p>
+              <div class="button-row">
+                <button class="primary-button" type="button" id="markDone">Complete Today</button>
+                <button class="secondary-button" type="button" id="savePhrase">Save Phrase</button>
+              </div>
+            </section>
+
+            <section class="lesson-card" aria-labelledby="dialogueHeading">
+              <div class="section-heading">
+                <span>2</span>
+                <h2 id="dialogueHeading">Mini Dialogue</h2>
+              </div>
+              <div class="dialogue" id="dialogueList"></div>
+            </section>
+          </div>
+
+          <div class="practice-column">
+            <section class="lesson-card quiz-card" aria-labelledby="quizHeading">
+              <div class="section-heading">
+                <span>3</span>
+                <h2 id="quizHeading">Quick Check</h2>
+              </div>
+              <p class="quiz-question" id="quizQuestion">What does this phrase mean?</p>
+              <div class="quiz-options" id="quizOptions"></div>
+              <p class="quiz-result" id="quizResult" role="status" aria-live="polite"></p>
+            </section>
+
+            <section class="lesson-card" id="review" aria-labelledby="reviewHeading">
+              <div class="section-heading">
+                <span>4</span>
+                <h2 id="reviewHeading">Saved Review</h2>
+              </div>
+              <div class="review-list" id="reviewList"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="wide-section" id="tones" aria-labelledby="tonesHeading">
+          <div class="section-heading">
+            <span>5</span>
+            <h2 id="tonesHeading">Tone Trainer</h2>
+          </div>
+          <div class="tone-grid" id="toneGrid"></div>
+        </section>
+
+        <section class="wide-section" id="progress" aria-labelledby="progressHeading">
+          <div class="section-heading">
+            <span>6</span>
+            <h2 id="progressHeading">Progress</h2>
+          </div>
+          <div class="progress-wrap">
+            <div>
+              <span class="metric-label">Lessons completed</span>
+              <strong id="completedCount">0</strong>
+            </div>
+            <div class="progress-track" aria-label="Monthly progress">
+              <div id="progressBar"></div>
+            </div>
+            <button class="secondary-button" type="button" id="resetProgress">Reset</button>
+          </div>
+          <div class="calendar-grid" id="calendarGrid" aria-label="Recent study days"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
