@@ -293,8 +293,8 @@ h1 {
 
 #phraseHanzi {
   margin: 0;
-  font-size: clamp(56px, 9vw, 112px);
-  line-height: 1;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.12;
   font-weight: 800;
   font-family: "Microsoft YaHei", "Noto Sans SC", sans-serif;
 }
